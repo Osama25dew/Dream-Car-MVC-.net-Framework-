@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>DreamCar - Customer Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/Content/CustomerTemplate/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/CustomerTemplate/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/CustomerTemplate/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/Content/CustomerTemplate/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/CustomerTemplate/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Content/CustomerTemplate/css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" style="font-size:3em; color:red; font-weight:bolder;" href="index.html">DreamCar</a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="@Url.Action("IndexCustomer","Home")"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="@Url.Action("About","Home")"><i class="fa fa-address-book"></i> About Us</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="@Url.Action("DisplayCarModel","Home")"><i class="fa fa-car"></i> Cars</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="@Url.Action("DisplayShowroom","Home")"><i class="fa fa-building"></i> Showrooms</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="@Url.Action("Client","Home")"><i class="fa fa-user-astronaut"></i> Clients</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="@Url.Action("Login","Home")"><i class="fa fa-user-alt"></i> Admin Login</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            
+            </div>
+            <!-- Start Side Menu -->
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+                <li class="cart-box">
+                    <ul class="cart-list">
+                        <li>
+                            <a href="#" class="photo"><img src="~/Content/CustomerTemplate/images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Delica omtantur </a></h6>
+                            <p>1x - <span class="price">$80.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="~/Content/CustomerTemplate/images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Omnes ocurreret</a></h6>
+                            <p>1x - <span class="price">$60.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="~/Content/CustomerTemplate/images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Agam facilisis</a></h6>
+                            <p>1x - <span class="price">$40.00</span></p>
+                        </li>
+                        <li class="total">
+                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                            <span class="float-right"><strong>Total</strong>: $180.00</span>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            <!-- End Side Menu -->
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+
+
+    @RenderBody()
+
+
+
+
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+        <p class="footer-company">
+            All Rights Reserved. &copy; 2022 <a href="#">Honey Production</a> Design By : Osama Maarouf
+        </p>
+    </div>
+    <!-- End copyright  -->
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    <!-- ALL JS FILES -->
+    <script src="~/Content/CustomerTemplate/js/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/CustomerTemplate/js/popper.min.js"></script>
+    <script src="~/Content/CustomerTemplate/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="~/Content/CustomerTemplate/js/jquery.superslides.min.js"></script>
+    <script src="~/Content/CustomerTemplate/js/bootstrap-select.js"></script>
+    <script src="~/Content/CustomerTemplate/js/inewsticker.js"></script>
+    <script src="~/Content/CustomerTemplate/js/bootsnav.js."></script>
+    <script src="~/Content/CustomerTemplate/js/images-loded.min.js"></script>
+    <script src="~/Content/CustomerTemplate/js/isotope.min.js"></script>
+    <script src="~/Content/CustomerTemplate/js/owl.carousel.min.js"></script>
+    <script src="~/Content/CustomerTemplate/js/baguetteBox.min.js"></script>
+    <script src="~/Content/CustomerTemplate/js/form-validator.min.js"></script>
+    <script src="~/Content/CustomerTemplate/js/contact-form-script.js"></script>
+    <script src="~/Content/CustomerTemplate/js/custom.js"></script>
+</body>
+
+</html>

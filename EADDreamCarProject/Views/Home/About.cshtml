@@ -1,0 +1,80 @@
+﻿@model IEnumerable<EADDreamCarProject.Models.Admin>
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>ABOUT US</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("IndexCustomer","Home")">Home</a></li>
+                    <li class="breadcrumb-item active">ABOUT US</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
+<!-- Start About Page  -->
+<div class="about-box-main">
+    <div class="container">
+        <div class="row my-1">
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Trusted</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Professional</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3>We are Expert</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+        </div>
+
+ 
+           
+            <div class="row">
+                <div class="col-12">
+                    <center><h2 class="noo-sh-title">Meet Our Team</h2></center>
+                </div>
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6 col-lg-4 col-xl-4">
+                        <div class="blog-box">
+                            <div class="blog-img">
+                                <img height="300vh" width="100%" src="@Url.Content(item.AdminPicture)" alt="" />
+                            </div>
+                            <center>
+                                <div class="blog-content">
+                                    <div class="title-blog" >
+                                        <h1 style="color:red; font-weight:bolder;">@item.AdminName</h1>
+                                        <p style="color:blue; font-size:1.2em;">@item.AdminEmail</p>
+
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+
+
+
+                    </div>
+                }
+
+
+            </div>
+
+    </div>
+</div>
+<!-- End About Page -->

@@ -1,0 +1,80 @@
+﻿@model EADDreamCarProject.Models.CarModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CarModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarModelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarModelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarModelPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarModelPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarModelDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarModelDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarModelEngineCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarModelEngineCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarModelFuelType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarModelFuelType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarModelPicture)
+        </dt>
+
+        <dd>
+            <img height="500vh" width="60%" src="@Url.Content(Model.CarModelPicture)" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,83 @@
+﻿@model EADDreamCarProject.Models.Customer
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+@{
+    ViewBag.Title = "Create";
+}
+<br />
+<div class="col-12" style="text-align:center;">
+    <h2 class="noo-sh-title mb-4" style="color:maroon">Get Your Dream Car</h2>
+</div>
+
+@using (Html.BeginForm("Create", "BuyCars", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+                @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <h3 style="margin-left:15px; color:red;"><b>Enter Full Name:</b></h3>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CustomerName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <h3 style="margin-left:15px; color:red;"><b>Enter City:</b></h3>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CustomerCity, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CustomerCity, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <h3 style="margin-left:15px; color:red;"><b>Enter Home Address:</b></h3>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CustomerAddress, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <h3 style="margin-left:15px; color:red;"><b>Enter Contact Number:</b></h3>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CustomerContact, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CustomerContact, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <h3 style="margin-left:15px; color:red;"><b>Enter Email:</b></h3>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <h3 style="margin-left:15px; color:red;"><b>Choose Company Name:</b></h3>
+        <div class="col-md-10">
+            @Html.DropDownList("CompanyFID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CompanyFID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <h3 style="margin-left:15px; color:red;"><b>Choose Car Model:</b></h3>
+        <div class="col-md-10">
+            @Html.DropDownList("CarModelFID", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CarModelFID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <h3 style="margin-left:15px; color:red;"><b>Add Your Picture</b></h3>
+        <div class="col-md-10">
+            <input type="file" name="CustomerPic" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit Request" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+

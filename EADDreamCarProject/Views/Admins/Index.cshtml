@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EADDreamCarProject.Models.Admin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-danger table-hover">
+    <tr>
+        <th>
+            Admin Picture
+        </th>
+        <th>
+            Admin Name
+        </th>
+        <th>
+            Admin Email
+        </th>
+        <th>
+            Admin Password
+        </th>
+        <th>
+            Admin Contact
+        </th>
+        <th>
+            Admin Address
+        </th>
+        <th>
+            Actions
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img height="100px" width="100px" src="@Url.Content(item.AdminPicture)" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminAddress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.AdminID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AdminID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AdminID })
+        </td>
+    </tr>
+}
+
+</table>

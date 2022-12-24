@@ -1,0 +1,78 @@
+﻿@model IEnumerable<EADDreamCarProject.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-danger">
+    <tr>
+        <th>
+            Customer Picture
+        </th>
+
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Customer City
+        </th>
+        <th>
+            Customer Address
+        </th>
+        <th>
+            Customer Contact
+        </th>
+        <th>
+            Customer Email
+        </th>
+        <th>
+            Purchase Model Name
+        </th>
+        <th>
+            Company Name
+        </th>
+
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img height="100px" width="100px" src="@Url.Content(item.CustomerPicture)" />
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarModel.CarModelName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company.CompanyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model EADDreamCarProject.Models.DisplayHomePage
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<div class="container">
+
+    <div class="row my-5">
+        <div class="col-12" style="text-align:center;">
+            <h2 class="noo-sh-title mb-4" style="color:maroon">Companies</h2>
+        </div>
+        @foreach (var item in Model.HomeComp)
+        {
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3 style="color:red; font-weight:bolder">@item.CompanyName</h3>
+                    <p><span style="color:black; font-size:1.1em;"><i class="fa fa-registered"></i> Registration No: </span><span style="font-size:medium;">@item.CompanyRegistrationNo</span></p>
+                    <p><span style="color:black; font-size:1.1em;"><i class="fa fa-address-book"></i> Email: </span><span style="font-size:medium;">@item.CompanyEmail</span></p>
+                    <p><span style="color:black; font-size:1.1em;"><i class="fa fa-phone"></i> Contact: </span><span style="font-size:medium;">@item.CompanyContact</span></p>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+<!-- Start Models  -->
+<div class="categories-shop">
+    <div class="container">
+        <div class="col-12" style="text-align:center;">
+            <h2 class="noo-sh-title mb-4" style="color:maroon">Car Models</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.HomeCarMod)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="shop-cat-box">
+                        <img width="50%" height="350vh" src="@Url.Content(item.CarModelPicture)" alt="" />
+                        <button style="width:100%; color:white;" class="btn hvr-hover">@item.CarModelName</button>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- End Categories -->
+<!-- Start Instagram Feed  -->
+<div class="col-12" style="text-align:center;">
+    <h2 class="noo-sh-title mb-4" style="color:maroon">Our Team</h2>
+</div>
+<div class="instagram-box">
+    <div class="main-instagram owl-carousel owl-theme">
+        @foreach (var item in Model.HomeAdm)
+        {
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img height="250vh" src="@Url.Content(item.AdminPicture)" alt="" />
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+<!-- End Instagram Feed  -->

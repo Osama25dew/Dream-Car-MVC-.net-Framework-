@@ -1,0 +1,57 @@
+﻿@model IEnumerable<EADDreamCarProject.Models.Showroom>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-danger">
+    <tr>
+        <th>
+            Showroom Name
+        </th>
+        <th>
+            Showroom City
+        </th>
+        <th>
+            Showroom Address
+        </th>
+        <th>
+            Showroom Contact No.
+        </th>
+        <th>
+            Showroom Email
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowroomName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowroomCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowroomAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowroomContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowroomEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ShowroomID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ShowroomID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ShowroomID })
+        </td>
+    </tr>
+}
+
+</table>

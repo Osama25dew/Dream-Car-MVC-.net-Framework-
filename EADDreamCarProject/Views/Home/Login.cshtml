@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <center>
+        <table class="table-bordered table-hover mb-4 mt-4" style="border:3px solid darkred;" width="40%" height="400px">
+            <tr><td colspan="2" style="color:white; background-color:darkred; font-weight:900; text-align:center; font-size:x-large;">Admin Login</td></tr>
+            <tr style="text-align: center;"><td>Email</td><td><input name="AdminEmail" type="email" /></td></tr>
+            <tr style="text-align: center;"><td>Password</td><td><input name="AdminPassword" type="password" /></td></tr>
+            <tr><td colspan="2" style="color: red; text-align: center; font-size: large">@ViewBag.Message</td></tr>
+            <tr><td colspan="2" style="text-align: center;"><input class="btn btn-danger" value="Login" type="submit" /></td></tr>
+        </table>
+    </center>
+}

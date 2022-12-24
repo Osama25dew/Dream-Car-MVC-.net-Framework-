@@ -1,0 +1,84 @@
+﻿@model EADDreamCarProject.Models.DisplayClient
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Our Clients</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("IndexCustomer","Home")">Home</a></li>
+                    <li class="breadcrumb-item active">Clients</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
+<!-- Start Blog  -->
+<div class="latest-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Our Happy Clients</h1>
+                    <p>Those who drive their Dream Car</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="categories-shop">
+            <div class="container">
+                <div class="row">
+                    @foreach (var comp in Model.CompanyList)
+                    {
+                        <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                            <div class="shop-cat-box">
+                                <img />
+                                <a class="btn btn-danger" style="" href="@Url.Action("Client", "Home", new {id=comp.CompanyID})">@comp.CompanyName</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            @foreach (var item in Model.CustomerList)
+            {
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                    <div class="blog-box">
+                        <div class="blog-img">
+                            <img height="300vh" width="100%" src="@Url.Content(item.CustomerPicture)" alt="" />
+                        </div>
+                        <center>
+                            <div class="blog-content">
+                                <div class="title-blog">
+                                    <h1 style="color:red; font-weight:bolder;">@item.CustomerName</h1>
+                                    <p style="color:blue; font-size:1.2em;">@item.CustomerEmail</p>
+                                    <p style="color:black; font-size:1.2em;">@item.CustomerCity</p>
+                                    <hr />
+                                    <p style="color:black; font-size:1.2em;">@item.Company.CompanyName @item.CarModel.CarModelName</p>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+
+
+
+                </div>
+            }
+
+
+        </div>
+
+    </div>
+
+
+</div>
+<!-- End Blog  -->

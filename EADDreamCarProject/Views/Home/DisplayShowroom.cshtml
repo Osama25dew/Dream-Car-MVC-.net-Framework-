@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EADDreamCarProject.Models.Showroom>
+@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Our Showrooms</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("IndexCustomer","Home")">Home</a></li>
+                    <li class="breadcrumb-item active">Showrooms</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
+
+<div class="container">
+
+    <div class="row my-5">
+        <div class="col-12" style="text-align:center;">
+            <h2 class="noo-sh-title mb-4" style="color:maroon">Our Showrooms</h2>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-lg-4">
+                <div class="service-block-inner">
+                    <h3 style="color:red; font-weight:bolder">@item.ShowroomName</h3>
+                    <p><span style="color:black; font-size:1.1em;"><i class="fa fa-home"></i> City: </span><span style="font-size:medium;">@item.ShowroomCity</span></p>
+                    <p><span style="color:black; font-size:1.1em;"><i class="fa fa-map"></i> Address: </span><span style="font-size:medium;">@item.ShowroomAddress</span></p>
+                    <p><span style="color:black; font-size:1.1em;"><i class="fa fa-address-book"></i> Email: </span><span style="font-size:medium;">@item.ShowroomEmail</span></p>
+                    <p><span style="color:black; font-size:1.1em;"><i class="fa fa-phone"></i> Contact: </span><span style="font-size:medium;">@item.ShowroomContact</span></p>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model EADDreamCarProject.Models.Showroom
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Showroom</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowroomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowroomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowroomCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowroomCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowroomAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowroomAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowroomContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowroomContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowroomEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowroomEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ShowroomID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
